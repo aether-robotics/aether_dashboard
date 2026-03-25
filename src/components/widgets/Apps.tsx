@@ -58,12 +58,11 @@ interface Props {
 
 export function Apps({ apps }: Props) {
   return (
-    <WidgetCard className="w-full flex-none flex flex-col overflow-hidden mb-[0.84rem]">
-      {/* Header */}
-      <div className="px-4 py-3 border-b border-slate-200 flex items-center justify-between flex-none">
-        <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">APPS</span>
-        <button className="text-[10px] font-bold text-primary uppercase hover:underline">Manage Services</button>
+    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
+        <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">Apps</span>
       </div>
+
 
       {/* Status Bar */}
       <div className="px-4 py-4 bg-slate-50/50 border-b border-slate-200">

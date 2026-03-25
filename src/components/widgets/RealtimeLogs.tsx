@@ -21,14 +21,9 @@ interface Props {
 
 export function RealtimeLogs({ logs }: Props) {
   return (
-    <WidgetCard className="flex flex-col flex-1 overflow-hidden min-h-[200px] md:min-h-[400px]">
-      {/* Header */}
-      <div className="px-4 py-3 bg-white border-b border-slate-200 flex items-center justify-between flex-none">
-        <h3 className="text-[10px] font-bold text-slate-900 tracking-widest uppercase flex items-center gap-2">
-          <span className="material-symbols-outlined text-xs">terminal</span>
-          REAL_TIME_LOGS
-        </h3>
-        <span className="text-[9px] text-slate-500 font-bold uppercase">LIVE</span>
+    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
+        <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">Logs</span>
       </div>
 
       {/* Log output */}

@@ -27,6 +27,8 @@ export function Dashboard() {
             uptime={node.uptime}
             heartbeat={node.heartbeat}
             online={true}
+            onShutdown={() => { /* TODO: POST /api/device/shutdown */ }}
+            onRestart={() => { /* TODO: POST /api/device/restart */ }}
           />
         }
         leftPanel={

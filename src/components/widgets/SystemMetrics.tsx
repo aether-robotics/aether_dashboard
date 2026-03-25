@@ -8,13 +8,11 @@ interface Props {
 
 export function SystemMetrics({ metrics }: Props) {
   return (
-    <WidgetCard className="p-4 flex flex-col">
-      <div className="flex items-center justify-between mb-4">
+    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
         <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">System Metrics</span>
-        <span className="material-symbols-outlined text-sm text-primary">analytics</span>
       </div>
-      <div className="border-b border-slate-200 -mx-4 mb-4" />
-      <div className="space-y-4">
+      <div className="p-4 space-y-4">
         <MetricBar
           label="CPU Utilization"
           value={metrics.cpuPercent}

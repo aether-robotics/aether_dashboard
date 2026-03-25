@@ -7,13 +7,10 @@ interface Props {
 
 export function Viewport3D({ globalFrame = '/map', fixedFrame = '/base_link' }: Props) {
   return (
-    <WidgetCard className="hidden md:flex relative w-full flex-none h-[38vh] overflow-hidden rviz-viewport flex-col mb-[0.84rem]">
-      {/* Header */}
-      <div className="px-4 py-3 flex items-center justify-between flex-none">
+    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
         <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">3D Viewport</span>
-        <span className="material-symbols-outlined text-sm text-slate-400 hover:text-primary cursor-pointer">settings</span>
       </div>
-      <div className="border-b border-slate-200 w-full flex-none" />
 
       {/* Viewport */}
       <div className="relative flex-1 overflow-hidden">

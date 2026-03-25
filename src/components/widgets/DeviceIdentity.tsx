@@ -8,10 +8,11 @@ interface Props {
 
 export function DeviceIdentity({ identity }: Props) {
   return (
-    <WidgetCard className="p-4">
-      <div className="data-label mb-3">Device Identity</div>
-      <div className="border-b border-slate-200 -mx-4 mb-3" />
-      <div className="space-y-3">
+    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+      <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
+        <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">Device Identity</span>
+      </div>
+      <div className="p-4 space-y-3 overflow-y-auto flex-1">
         <div className="grid grid-cols-2 gap-x-3 gap-y-2">
           <div>
             <div className="text-[9px] text-slate-500 uppercase font-bold mb-0.5">Supervisor</div>
