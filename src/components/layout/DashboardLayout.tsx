@@ -17,7 +17,7 @@ export function DashboardLayout({ header, leftPanel, centerPanel, rightPanel }: 
       <main className="relative central-stage flex flex-col gap-[0.84rem] md:h-full border-r border-slate-200 md:overflow-y-auto p-[0.84rem] order-1 md:order-none">
         {centerPanel}
       </main>
-      <aside className="p-[0.84rem] flex flex-col gap-[0.84rem] md:overflow-y-auto md:col-span-2 lg:col-span-1 order-2 md:order-none">
+      <aside className="p-[0.84rem] flex flex-col md:h-full md:overflow-hidden md:col-span-2 lg:col-span-1 order-2 md:order-none">
         {rightPanel}
       </aside>
     </div>

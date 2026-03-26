@@ -21,7 +21,7 @@ interface Props {
 
 export function RealtimeLogs({ logs }: Props) {
   return (
-    <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
+    <WidgetCard className="w-full flex flex-col flex-1 min-h-0 overflow-hidden">
       <div className="px-4 py-3 flex items-center justify-between border-b border-slate-200 flex-none">
         <span className="text-[11px] font-bold text-slate-900 tracking-widest uppercase">Logs</span>
       </div>

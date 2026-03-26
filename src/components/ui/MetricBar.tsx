@@ -1,4 +1,4 @@
-type BarColor = 'primary' | 'green' | 'amber' | 'red'
+type BarColor = 'primary' | 'green' | 'orange' | 'red'
 
 interface Props {
   label: string
@@ -10,7 +10,7 @@ interface Props {
 const COLOR_MAP: Record<BarColor, string> = {
   primary: 'bg-primary',
   green:   'bg-green-500',
-  amber:   'bg-amber-500',
+  orange:  'bg-orange-500',
   red:     'bg-red-500',
 }
 
@@ -21,9 +21,9 @@ export function MetricBar({ label, value, displayValue, color = 'primary' }: Pro
         <span className="text-slate-500 uppercase">{label}</span>
         <span className="text-slate-900">{displayValue}</span>
       </div>
-      <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+      <div className="h-4 w-full bg-slate-100 border border-slate-200 rounded-sm overflow-hidden">
         <div
-          className={`h-full ${COLOR_MAP[color]}`}
+          className={`h-full rounded-sm ${COLOR_MAP[color]}`}
           style={{ width: `${Math.min(100, Math.max(0, value))}%` }}
         />
       </div>

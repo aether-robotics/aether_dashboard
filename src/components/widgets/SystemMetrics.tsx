@@ -6,6 +6,12 @@ interface Props {
   metrics: SystemMetricsType
 }
 
+function getMetricColor(value: number) {
+  if (value < 50) return 'green' as const
+  if (value < 75) return 'orange' as const
+  return 'red' as const
+}
+
 export function SystemMetrics({ metrics }: Props) {
   return (
     <WidgetCard className="w-full flex flex-col h-[400px] overflow-hidden">
@@ -17,31 +23,25 @@ export function SystemMetrics({ metrics }: Props) {
           label="CPU Utilization"
           value={metrics.cpuPercent}
           displayValue={`${metrics.cpuPercent}%`}
-          color="primary"
+          color={getMetricColor(metrics.cpuPercent)}
         />
         <MetricBar
           label={`Memory (${metrics.memoryTotalGB}GB)`}
           value={metrics.memoryPercent}
           displayValue={`${metrics.memoryPercent}%`}
-          color="green"
+          color={getMetricColor(metrics.memoryPercent)}
         />
         <MetricBar
           label="Thermal Load"
           value={metrics.thermalCelsius}
           displayValue={`${metrics.thermalCelsius}°C`}
-          color="amber"
-        />
-        <MetricBar
-          label="Battery Level"
-          value={metrics.batteryPercent}
-          displayValue={`${metrics.batteryPercent}%`}
-          color="primary"
+          color={getMetricColor(metrics.thermalCelsius)}
         />
         <MetricBar
           label="Storage"
           value={metrics.storagePercent}
           displayValue={`${metrics.storagePercent}%`}
-          color="amber"
+          color={getMetricColor(metrics.storagePercent)}
         />
       </div>
     </WidgetCard>

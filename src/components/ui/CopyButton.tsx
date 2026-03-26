@@ -17,10 +17,10 @@ export function CopyButton({ value }: Props) {
   return (
     <button
       onClick={handleCopy}
-      className="shrink-0 text-primary/50 hover:text-primary transition-colors leading-none"
+      className="group shrink-0 inline-flex h-6 w-6 items-center justify-center rounded-md text-primary/50 leading-none transition-all duration-150 hover:bg-slate-100 hover:text-primary active:scale-95 active:bg-slate-200/80"
       title="Copy"
     >
-      <span className="material-symbols-outlined" style={{ fontSize: '13px' }}>
+      <span className="material-symbols-outlined transition-transform duration-150 group-hover:scale-105" style={{ fontSize: '13px' }}>
         {copied ? 'done' : 'content_copy'}
       </span>
     </button>

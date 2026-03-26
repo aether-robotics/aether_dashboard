@@ -28,13 +28,53 @@ export interface SystemMetrics {
 
 export type ServiceStatus = 'active' | 'warning' | 'inactive' | 'error'
 
+export interface EnvVar {
+  key: string
+  value: string
+}
+
+export interface TopicEntry {
+  name: string
+  messageType: string
+  rateHz?: number
+}
+
+export interface CommNode {
+  name: string
+  publishers: TopicEntry[]
+  subscribers: TopicEntry[]
+  services?: string[]
+  actions?: string[]
+}
+
+export interface CommGraph {
+  middleware?: string   // e.g. "ROS 2 Humble", "MQTT", "DDS/Cyclone"
+  nodes: CommNode[]
+}
+
+export interface NodeParam {
+  key: string
+  value: string
+}
+
+export interface ServiceNode {
+  name: string
+  params: NodeParam[]
+}
+
 export interface Service {
   id: string
   name: string
   version: string
+  image: string
+  command?: string
+  restartPolicy: 'always' | 'on-failure' | 'unless-stopped' | 'no'
   status: ServiceStatus
   cpuPercent: number
   memoryMB: number
+  envVars: EnvVar[]
+  nodes?: ServiceNode[]
+  commGraph?: CommGraph
 }
 
 export type OperationalStatus = 'executing' | 'idle' | 'error' | 'paused'
