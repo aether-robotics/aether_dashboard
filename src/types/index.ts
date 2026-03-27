@@ -102,6 +102,16 @@ export interface LogEntry {
   timestamp?: string
 }
 
+// ── FK / Kinematics ────────────────────────────────────────────────────────────
+
+export type ModelFormat = 'sdf' | 'urdf'
+
+export interface JointState {
+  /** joint name → angle in radians (or metres for prismatic) */
+  angles: Map<string, number>
+  stamp?: number
+}
+
 // ── Robot / Node ────────────────────────────────────────────────────────────────
 
 export interface RobotNode {
